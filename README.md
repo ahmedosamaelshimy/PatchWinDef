@@ -19,14 +19,14 @@ Before manually installing patches, make sure your system is configured for auto
 4. Select **Check for updates**.
 
 If updates are available, they will be downloaded automatically.
-
-## Step 2: Install Using Your PowerShell Script
+### Password: `passwordx123`
+## Step 2: Install Using Your PowerShell Script (Run as Administrator)
 
 Since you have your own `.ps1` script for handling updates, you can use it to automate the installation of any downloaded patch. For example:
 
 ```powershell
 # Example: Running your script to install the downloaded update
-.\YourUpdateScript.ps1 -UpdatePath "C:\Path\To\Downloaded\Update.msu"
+.\PatchWin.ps1
 ```
 
 This ensures the update is installed according to your workflow without needing to manually interact with the installer GUI.
